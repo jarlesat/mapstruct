@@ -9,7 +9,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Source {
+    private boolean removed;
     private List<String> strings = new ArrayList<>();
+
+    public boolean isRemoved() {
+        return removed;
+    }
+
+    public void setRemoved(boolean removed) {
+        this.removed = removed;
+    }
 
     public List<String> getStrings() {
         return strings;

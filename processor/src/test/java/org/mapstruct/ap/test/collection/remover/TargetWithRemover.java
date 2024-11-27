@@ -9,7 +9,21 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class TargetWithRemover {
+    private boolean removed;
     private List<String> strings = new ArrayList<>();
+
+    public boolean isRemoved() {
+        return removed;
+    }
+
+    public void setRemoved(boolean removed) {
+        this.removed = removed;
+    }
+
+    public TargetWithRemover removed(boolean removed) {
+        this.removed = removed;
+        return this;
+    }
 
     public List<String> getStrings() {
         return strings;

@@ -31,4 +31,15 @@ public class MapperWithRemoverInTargetTest {
 
         assertThat( target.getStrings() ).containsExactly( "myString" );
     }
+
+    @ProcessorTest
+    @ExpectedCompilationOutcome(CompilationResult.SUCCEEDED)
+    void propertiesStartingWithTheWordRemoveShouldNotBeIgnored() {
+        Source src = new Source();
+        src.setRemoved( true );
+
+        TargetWithRemover target = MapperWithRemoverInTarget.INSTANCE.map( src );
+
+        assertThat( target.isRemoved() ).isTrue();
+    }
 }
